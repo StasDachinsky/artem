@@ -14,7 +14,7 @@
             "name": "User"
         },
         {
-            "name": "Pet"
+            "name": "product"
         }
     ],
     "paths": {
@@ -259,14 +259,14 @@
                 }
             }
         },
-        "/pets": {
+        "/products": {
             "get": {
                 "tags": [
-                    "Pet"
+                    "product"
                 ],
-                "summary": "List all pets",
-                "description": "Returns all pets",
-                "operationId": "FindAllPets",
+                "summary": "List all products",
+                "description": "Returns all products",
+                "operationId": "FindAllproducts",
                 "security": [
                     {
                         "basicAuth": []
@@ -289,7 +289,7 @@
                                         "data": {
                                             "type": "array",
                                             "items": {
-                                                "$ref": "#/components/schemas/Pet"
+                                                "$ref": "#/components/schemas/product"
                                             }
                                         }
                                     }
@@ -301,11 +301,11 @@
             },
             "post": {
                 "tags": [
-                    "Pet"
+                    "product"
                 ],
-                "summary": "Create new pet",
+                "summary": "Create new product",
                 "description": "",
-                "operationId": "CreatePet",
+                "operationId": "Createproduct",
                 "security": [
                     {
                         "basicAuth": []
@@ -326,7 +326,7 @@
                                             "type": "string"
                                         },
                                         "data": {
-                                            "$ref": "#/components/schemas/Pet"
+                                            "$ref": "#/components/schemas/product"
                                         }
                                     }
                                 }
@@ -338,7 +338,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/NewPet"
+                                "$ref": "#/components/schemas/Newproduct"
                             }
                         }
                     },
@@ -347,14 +347,14 @@
                 }
             }
         },
-        "/pets/{id}": {
+        "/products/{id}": {
             "get": {
                 "tags": [
-                    "Pet"
+                    "product"
                 ],
-                "summary": "Get pet",
-                "description": "Returns the given pet",
-                "operationId": "FindPet",
+                "summary": "Get product",
+                "description": "Returns the given product",
+                "operationId": "Findproduct",
                 "security": [
                     {
                         "basicAuth": []
@@ -364,7 +364,7 @@
                     {
                         "name": "id",
                         "in": "path",
-                        "description": "ID of pet to return",
+                        "description": "ID of product to return",
                         "required": true,
                         "schema": {
                             "type": "string",
@@ -387,7 +387,7 @@
                                             "type": "string"
                                         },
                                         "data": {
-                                            "$ref": "#/components/schemas/Pet"
+                                            "$ref": "#/components/schemas/product"
                                         }
                                     }
                                 }
@@ -398,11 +398,11 @@
             },
             "put": {
                 "tags": [
-                    "Pet"
+                    "product"
                 ],
-                "summary": "Update pet",
-                "description": "Updates the given pet",
-                "operationId": "UpdatePet",
+                "summary": "Update product",
+                "description": "Updates the given product",
+                "operationId": "Updateproduct",
                 "security": [
                     {
                         "basicAuth": []
@@ -412,7 +412,7 @@
                     {
                         "name": "id",
                         "in": "path",
-                        "description": "ID of pet to update",
+                        "description": "ID of product to update",
                         "required": true,
                         "schema": {
                             "type": "string",
@@ -435,7 +435,7 @@
                                             "type": "string"
                                         },
                                         "data": {
-                                            "$ref": "#/components/schemas/Pet"
+                                            "$ref": "#/components/schemas/product"
                                         }
                                     }
                                 }
@@ -447,21 +447,21 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/NewPet"
+                                "$ref": "#/components/schemas/Newproduct"
                             }
                         }
                     },
-                    "description": "Pet object that needs to be added to the database",
+                    "description": "product object that needs to be added to the database",
                     "required": true
                 }
             },
             "delete": {
                 "tags": [
-                    "Pet"
+                    "product"
                 ],
-                "summary": "Delete pet",
-                "description": "Removes the given pet",
-                "operationId": "DeletePet",
+                "summary": "Delete product",
+                "description": "Removes the given product",
+                "operationId": "Deleteproduct",
                 "security": [
                     {
                         "basicAuth": []
@@ -471,7 +471,7 @@
                     {
                         "name": "id",
                         "in": "path",
-                        "description": "ID of pet to delete",
+                        "description": "ID of product to delete",
                         "required": true,
                         "schema": {
                             "type": "string",
@@ -543,7 +543,7 @@
                     }
                 }
             },
-            "NewPet": {
+            "Newproduct": {
                 "type": "object",
                 "properties": {
                     "name": {
@@ -589,8 +589,8 @@
                     }
                 }
             },
-            "Pet": {
-                "title": "Pet",
+            "product": {
+                "title": "product",
                 "allOf": [
                     {
                         "type": "object",

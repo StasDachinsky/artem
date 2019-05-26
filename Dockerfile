@@ -1,4 +1,5 @@
 FROM node:alpine
+EXPOSE 3000
 
 # Create work directory
 WORKDIR /usr/src/app

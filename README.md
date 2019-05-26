@@ -311,11 +311,11 @@ define(User, (faker: typeof Faker, settings: { roles: string[] }) => {
 Handle relation in the entity factory like this.
 
 ```typescript
-define(Pet, (faker: typeof Faker, settings: undefined) => {
+define(Product, (faker: typeof Faker, settings: undefined) => {
     const gender = faker.random.number(1);
     const name = faker.name.firstName(gender);
 
-    const pet = new Pet();
+    const pet = new Product();
     pet.name = name;
     pet.age = faker.random.number();
     pet.user = factory(User)({ roles: ['admin'] })
@@ -345,8 +345,8 @@ the generated value before they get persisted.
 ...
 await factory(User)()
     .map(async (user: User) => {
-        const pets: Pet[] = await factory(Pet)().createMany(2);
-        const petIds = pets.map((pet: Pet) => pet.Id);
+        const pets: Product[] = await factory(Product)().createMany(2);
+        const petIds = pets.map((pet: Product) => pet.Id);
         await user.pets().attach(petIds);
     })
     .createMany(5);
@@ -364,7 +364,7 @@ export class CreatePets implements SeedsInterface {
 
         await times(10, async (n) => {
             // This creates a pet in the database
-            const pet = await factory(Pet)().create();
+            const pet = await factory(Product)().create();
             // This only returns a entity with fake data
             const user = await factory(User)({ roles: ['admin'] }).make();
             user.pets = [pet];
@@ -421,7 +421,7 @@ import DataLoader from 'dataloader';
 import { DLoader } from '../../decorators/DLoader';
     ...
     constructor(
-        private petService: PetService,
+        private petService: ItemService,
         @Logger(__filename) private log: LoggerInterface,
         @DLoader(UserModel) private userLoader: DataLoader<string, UserModel>
     ) { }
@@ -437,7 +437,7 @@ Or you could use the repository too.
 Or even use a custom method of your given repository.
 
 ```typescript
-@DLoader(PetRepository, {
+@DLoader(ProductRepository, {
     method: 'findByUserIds',
     key: 'userId',
     multiple: true,

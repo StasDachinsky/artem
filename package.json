@@ -1,5 +1,5 @@
 {
-  "name": "express-typescript-boilerplate",
+  "name": "",
   "version": "3.2.0",
   "description": "A delightful way to building a Node.js RESTful API Services with beautiful code written in TypeScript",
   "main": "src/app.ts",
@@ -13,30 +13,7 @@
   "engines": {
     "node": ">=8.0.0"
   },
-  "repository": "git+ssh://git@github.com/w3tec/express-typescript-boilerplate.git",
-  "keywords": [
-    "NodeJS",
-    "TypeScript",
-    "express",
-    "boilerplate",
-    "skeleton",
-    "starter-kit",
-    "w3tec.ch"
-  ],
-  "homepage": "https://github.com/w3tec/express-typescript-boilerplate#readme",
-  "author": "w3tec.ch <info@w3tec.ch>",
-  "contributors": [
-    {
-      "name": "David Weber",
-      "email": "david.weber@w3tec.ch",
-      "url": "https://github.com/dweber019"
-    },
-    {
-      "name": "Gery Hirschfeld",
-      "email": "gery.hirschfeld@w3tec.ch",
-      "url": "https://github.com/hirsch88"
-    }
-  ],
+
   "dependencies": {
     "bcrypt": "3.0.1",
     "chalk": "^2.4.1",
@@ -46,6 +23,7 @@
     "copyfiles": "^2.1.0",
     "cors": "^2.8.4",
     "dataloader": "^1.3.0",
+    "date-fns": "^1.30.1",
     "dotenv": "6.0.0",
     "event-dispatch": "^0.4.1",
     "express": "^4.16.2",
