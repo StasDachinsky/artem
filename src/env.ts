@@ -9,6 +9,8 @@ import {
 /**
  * Load .env file or for tests the .env.test file.
  */
+const configg = { path: path.join(process.cwd(), `.env${((process.env.NODE_ENV === 'test') ? '.test' : '')}`) };
+console.log("CPNFIG", configg)
 dotenv.config({ path: path.join(process.cwd(), `.env${((process.env.NODE_ENV === 'test') ? '.test' : '')}`) });
 
 /**
