@@ -20,7 +20,7 @@ export const env = {
     isTest: process.env.NODE_ENV === 'test',
     isDevelopment: process.env.NODE_ENV === 'development',
     app: {
-        name: getOsEnv('APP_NAME'),
+        name: "app",
         version: (pkg as any).version,
         description: (pkg as any).description,
         host: getOsEnv('APP_HOST'),
